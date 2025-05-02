@@ -1,103 +1,308 @@
+'use client';
+import { JohnsonIcon } from "@/assets/icons/Johnson";
+import { KazakhstanIcon } from "@/assets/icons/Kazakhstan";
+import { PfizerIcon } from "@/assets/icons/Pfizer";
+import { TurkeyIcon } from "@/assets/icons/Turkey";
+import { WhatsappIcon } from "@/assets/icons/Whatsapp";
+import { Button } from "@/components/Button/Button";
 import Image from "next/image";
+import { MouseEvent } from "react";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+  const phone = '905424081090'; // Brazil example number
+  const defaultWhatsappMessage = "Hello! I would like to know more about your services.";
+  const encodedMessage = encodeURIComponent(defaultWhatsappMessage);
+  const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
+
+  const handleWhatsappClick = (event?: React.MouseEvent<HTMLAnchorElement | HTMLElement> | undefined) => {
+    if(event) {
+      event.preventDefault();
+    }
+    window.open(whatsappUrl, '_blank')
+  }
+
+  return (
+    <div className="total">
+      <header>
+        <nav className="fixed bg-white flex w-full justify-between h-[72px] px-20 py-4 z-30">
+          <div className="flex">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
+              src="/hmplast.webp"
               alt="Vercel logomark"
-              width={20}
-              height={20}
+              width={150}
+              height={100}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+            <ul className="flex ml-14 gap-8 items-center text-lg">
+              <li><a className="font-medium hover:underline" href="#">Products</a></li>
+              <li><a className="font-medium hover:underline" href="#">Our Company</a></li>
+              <li><a className="font-medium hover:underline" href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div className="flex items-center">
+            {/* <Button Icon={<WhatsappIcon />} buttonType="primary">
+              Send us a message
+            </Button> */}
+            <div className="flex items-center gap-1">
+              Español
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main className="">
+        {/* Adding a background image to the section gives time for the video to load */}
+        <section className="h-[94vh] bg-white">  
+            <div className="bg-[url(/machine-2.png)] bg-no-repeat bg-position-[calc(50%)_calc(50%+100px)] bg-size-[1000px] absolute size-full z-20 px-20 flex flex-col">
+              <div className="pt-[130px]">
+                <div>
+                  <h1 className="text-6xl text-center text-shadow-xs text-[56px]">Precision manufacturing for all industries</h1>
+                </div>
+                {/* <div className="mt-12">
+                  <h4 className="text-2xl">We build the products you need <br/> with the best quality. </h4>
+                </div>
+                <div className="flex mt-6">
+                  <Button className="mr-4" size="lg" Icon={<WhatsappIcon className="" />} buttonType="primary">
+                    Send us a message
+                  </Button>
+                  <Button size="lg" buttonType="secondary">
+                    How we work
+                  </Button>
+                </div> */}
+              </div>
+            </div>
+        </section>
+        <section className="px-20 py-10 bg-[#efefef]">
+          <div className="flex justify-center mb-7">
+            <h3 className="text-[32px] text-black font-bold">Trusted by 100+ clients worldwide.</h3>
+          </div>
+          <div className="overflow-hidden whitespace-nowrap w-full">
+            <div className="flex gap-8 animate-scroll-left">
+              <div><JohnsonIcon width={300} height={70}/></div>
+              <div><PfizerIcon width={140} height={70}/></div>
+              <div><PfizerIcon width={140} height={70}/></div>
+              <div><PfizerIcon width={140} height={70}/></div>
+              <div><PfizerIcon width={140} height={70}/></div>
+              <div><PfizerIcon width={140} height={70}/></div>
+              <div><PfizerIcon width={140} height={70}/></div>
+              <div><PfizerIcon width={140} height={70}/></div>
+              <div><JohnsonIcon width={300} height={70}/></div>
+              <div><PfizerIcon width={140} height={70}/></div>
+              <div><PfizerIcon width={140} height={70}/></div>
+              <div><PfizerIcon width={140} height={70}/></div>
+              <div><PfizerIcon width={140} height={70}/></div>
+              <div><PfizerIcon width={140} height={70}/></div>
+              <div><PfizerIcon width={140} height={70}/></div>
+              <div><PfizerIcon width={140} height={70}/></div>
+              <div><JohnsonIcon width={300} height={70}/></div>
+            </div>
+          </div>
+        </section>
+
+        <section className="p-20 bg-white">
+            <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center mb-16">
+                  <h3 className="text-4xl text-black font-bold mb-2">Comprehensive plastic and mold solutions.</h3>
+                  <h5 className="text-xl text-[#6d6d6d]">We deliver customized manufacturing solutions for every industry using a broad range of materials.</h5>
+                </div>
+                <div className="flex gap-6">
+                  <div className="card bg-[#F9F9F9] rounded-md w-[300px]">
+                    <div className="">
+                      <img width={300} className="rounded-t-md" src="/office_scene.png" />
+                    </div>
+                    <div className="px-4 py-4">
+                      <h5 className="text-xl font-bold mb-2">Concept to Production</h5>
+                      <p className="text-[#6d6d6d]">HM Plast provides comprehensive plastic and mold solutions —from concept to production— customized for each client.</p>
+                    </div>
+                  </div>
+                  <div className="card bg-[#F9F9F9] rounded-md w-[300px]">
+                    <div className="">
+                      <img className="rounded-t-md" src="./industries.png" />
+                    </div>
+                    <div className="px-4 py-4">
+                      <h5 className="text-xl font-bold mb-2">Industries we serve</h5>
+                      <p className="text-[#6d6d6d]">We serve key industries including Medical, Educational, Sports Equipment, Plastic Platforms, Toys, the Automotive industry and more.</p>
+                    </div>
+                  </div>
+                  <div className="card bg-[#F9F9F9] rounded-md w-[300px]">
+                    <div className="">
+                      <img className="rounded-t-md" src="./materials.png" />
+                    </div>
+                    <div className="px-4 py-4">
+                      <h5 className="text-xl font-bold mb-2">Materials</h5>
+                      <p className="text-[#6d6d6d]">We work with molds made out different materials, such as wood, plastic or metal, suited at client's request.</p>
+                    </div>
+                  </div>
+                  <div className="card bg-[#F9F9F9] rounded-md w-[300px]">
+                    <div className="">
+                      <img className="rounded-t-md" src="./years_experience.png" />
+                    </div>
+                    <div className="px-4 py-4">
+                      <h5 className="text-xl font-bold mb-2">Experience in the field</h5>
+                      <p className="text-[#6d6d6d]">HM Plast has been working with state-of-the-art technology in mold and plastic solutions for over 15 years.</p>
+                    </div>
+                  </div>
+                </div>
+                <Button className="mt-10" size="lg" onClick={handleWhatsappClick} buttonType="primary">
+                  Learn about what we stand for
+                </Button>
+              </div>
+            </div>
+        </section>
+
+        <section className="bg-white p-10">
+          <div className="flex items-center flex-col">
+            <h3 className="text-4xl text-black font-bold mb-2">From concept to production</h3>
+            <h5 className="text-xl text-[#6d6d6d]">We make your ideas a reality.</h5>
+          </div>
+          <div className="mt-20">
+          <div className="flex justify-between px-10 py-5">
+              <div className="flex-1/2 flex justify-center">
+                <img className="object-contain max-h-[100%] max-w-[450px] rounded-md" src="./businessmen_agreeing.png"/>
+              </div>
+              <div className="flex-1/2 flex flex-col items-center justify-center">
+                <div>
+                  <h4 className="text-3xl font-bold mb-2">Planning Phase</h4>
+                  <p className="text-xl text-[#6d6d6d] max-w-[500px] mb-5">
+                    Get in touch with us through WhatsApp or Email at <b>info@hmplast.com.tr</b> and start a conversation about what you desire to build, we'll take you step by step and give a quote for each item.
+                  </p>
+                    <a
+                      href="" 
+                      className="text-green-600 hover:text-green-700 active:text-green-800 font-bold group inline-flex items-center" 
+                      onClick={handleWhatsappClick}
+                    >
+                      Send us a message 
+                      <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                    </a>
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-between px-10 py-5 mt-20">
+              <div className="flex-1/2 flex flex-col items-center justify-center">
+                <div>
+                  <h4 className="text-3xl font-bold mb-2">Designing Phase</h4>
+                  <p className="text-xl text-[#6d6d6d] max-w-[500px] mb-5">
+                    After coming to a deal on what needs to be manufactured, we'll proceed to build the prototype's design and get in more specifics of what you'll need.
+                  </p>
+                  <a 
+                    className="text-green-600 hover:text-green-700 active:text-green-800 font-bold group inline-flex items-center" 
+                    href="#"
+                  >
+                    Read more about our values
+                    <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  </a>
+
+                </div>
+              </div>
+              <div className="flex-1/2 flex justify-center">
+                <img className="object-contain max-w-[100%] max-h-[100%] rounded-md" src="/solidworks_hospital_bed.png"/>
+              </div>
+            </div>
+            <div className="flex justify-between px-10 py-5 mt-20">
+              <div className="flex-1/2 flex justify-center">
+                <video className="object-cover w-[500px] rounded-md" autoPlay controls muted loop src="/videomakina.mp4" />    
+                {/* <img src="https://placehold.co/500x250"/> */}
+              </div>
+              <div className="flex-1/2 flex flex-col justify-center items-center">
+                <div>
+                  <h4 className="text-3xl font-bold mb-2">Manufacturing Phase</h4>
+                  <p className="text-xl text-[#6d6d6d] max-w-[500px] mb-5">
+                    After designs are done, the products requested will start to be manufactured and get ready to be shipped. We can also deliver the products to any country you need.
+                  </p>
+                  <a 
+                    className="text-green-600 hover:text-green-700 active:text-green-800 font-bold group inline-flex items-center"
+                    href="#"
+                  >
+                    See products we've done 
+                    <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="mt-12 flex justify-center">
+            <Button size="lg" onClick={handleWhatsappClick} buttonType="primary">
+              Get in touch with us
+            </Button>
+          </div>
+        </section>
+        <section className="px-20 pt-5 mt-5 mb-20 bg-white">
+          <div className="mb-10 flex flex-col items-center">
+            <h3 className="text-4xl font-bold mb-3">Industries we serve</h3>
+            <h5 className="text-xl text-[#6d6d6d]">We deliver customized solutions in every industry using a broad range of materials.</h5>
+          </div>
+
+          <div className="flex gap-7 overflow-hidden overflow-x-scroll pb-3 mb-10">
+              <img className="object-contain max-w-[450px] min-w-[450px] max-h-[250px]" src="./hospital_bed_hd.png" />
+              <img className="object-contain max-w-[450px] min-w-[450px] max-h-[250px]" src="./toy.png" />
+              <img className="object-contain max-w-[450px] min-w-[450px] max-h-[250px]" src="./ski-rack.png" />
+              <img className="object-contain max-w-[450px] min-w-[450px] max-h-[250px]" src="./gancho.png" />
+          </div>
+          <div className="flex justify-center">
+            <Button size="lg" onClick={handleWhatsappClick} buttonType="primary">
+                See more products
+            </Button>
+          </div>
+        </section>
+
+        <section className="mb-20">
+            <div className="mb-5 flex flex-col items-center">
+              <h3 className="text-4xl font-bold mb-3">Contact us</h3>
+              <h5 className="text-xl text-[#6d6d6d]">We'd love to hear from you! Reach out to us via WhatsApp or Email for any inquiries or support.</h5>
+            </div>
+            <form className="max-w-4xl mx-auto p-6 space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  required
+                  placeholder="First name"
+                  className="p-4 rounded-lg bg-gray-100 placeholder-gray-500"
+                />
+                <input
+                  type="text"
+                  required
+                  placeholder="Last name"
+                  className="p-4 rounded-lg bg-gray-100 placeholder-gray-500"
+                />
+              </div>
+              <input
+                type="email"
+                placeholder="Email"
+                required
+                className="w-full p-4 rounded-lg bg-gray-100 placeholder-gray-500"
+              />
+              <textarea
+                placeholder="Message"
+                required
+                minLength={10}
+                className="w-full p-4 rounded-lg bg-gray-100 placeholder-gray-500 h-48 resize-none"
+              />
+              <div className="flex justify-end">
+                <Button
+                  type="submit"
+                  buttonType="primary"
+                  size="lg"
+                >
+                  Send
+                </Button>
+              </div>
+            </form>
+        </section>
+        <section className="bg-gray-700 p-10">
+          <div className="flex flex-col items-center">
+            <h3 className="text-2xl font-bold">Our factories are located in</h3>
+            <div className="flex mt-8">
+              <div className="mr-64">
+              <TurkeyIcon />
+              </div>
+              <KazakhstanIcon />
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      {/* <footer className="">
+          footer
+      </footer> */}
     </div>
   );
 }

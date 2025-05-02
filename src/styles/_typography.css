@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "InterVariable";
+    src: url("/fonts/Inter/Inter-VariableFont_opsz,wght.ttf");
+}
+
+* {
+    font-family: "InterVariable";
+}
+  
