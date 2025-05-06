@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
 
 
   try {
-    await transporter.sendMail(mailOption, (err, _data) => {
+    await transporter.sendMail(mailOption, (err) => {
       if (err) {
         console.log(err);
         return NextResponse.json({ error: 'Email could not be sent' }, { status: 500 });

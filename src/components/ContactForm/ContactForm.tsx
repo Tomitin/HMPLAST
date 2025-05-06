@@ -11,7 +11,7 @@ export const ContactForm: React.FC = () => {
     const [isSending, setIsSending] = useState(false);
     const [success, setSuccess] = useState(false);
 
-    const handleChange = (event:any) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [event.target.name]: event.target.value });
     };
   
