@@ -2,7 +2,6 @@
 
 import { DetailedImage } from "@/components/DetailedImage/DetailedImage";
 import Dropdown from "@/components/Dropdown/Dropdown";
-import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 // const categories = ["Automotive", "Sports equipment", "Medical", "Toys", "All"];
@@ -45,7 +44,6 @@ export interface CategoriesImages {
 
 
 export default function Products() {
-  const t = useTranslations("HomePage");
   const [selectedCategory, setSelectedCategory] = useState("All")
 
   const categoriesImages: CategoriesImages = images.reduce((accum, image) => {
@@ -83,6 +81,8 @@ export default function Products() {
               <DetailedImage
                 className="object-cover w-[450px]"
                 src={images.src}
+                width={450}
+                height={450}
                 imgTitle={images.name}
                 alt=""
               />

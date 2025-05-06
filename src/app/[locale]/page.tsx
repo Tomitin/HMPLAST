@@ -5,11 +5,10 @@ import { PfizerIcon } from "@/assets/icons/Pfizer";
 import { Button } from "@/components/Button/Button";
 import { ContactForm } from "@/components/ContactForm/ContactForm";
 import { Link} from "@/i18n/navigation";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
   const t = useTranslations("HomePage");
-  const locale = useLocale();
 
   const phone = '905424081090'; // Brazil example number
   const defaultWhatsappMessage = "Hello! I would like to know more about your services.";

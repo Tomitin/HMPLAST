@@ -4,11 +4,8 @@ import { InstagramIcon } from "@/assets/icons/Instagram";
 import { LinkedInIcon } from "@/assets/icons/LinkedIn";
 import { ContactForm } from "@/components/ContactForm/ContactForm";
 import { Link } from "@/i18n/navigation";
-import { useTranslations } from "next-intl";
 
 export default function Contact() {
-  const t = useTranslations("HomePage");
-
   return (
     <div className="flex flex-wrap-reverse justify-between">
       <div className="ml-8 my-8">
