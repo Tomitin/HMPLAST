@@ -1,42 +1,11 @@
-// import styled from "@emotion/styled";
-// import { Button } from "antd";
-// import type { BaseButtonProps } from "antd/lib/button/button";
-// import type { FC } from "react";
-import { WhatsappIcon } from "@/assets/icons/Whatsapp";
 import React from "react";
 
-// import { black, darkGreen, lightGreen, lightGrey2 } from "../../styles/colors";
-
-// const StyledButton = styled(Button)<{ fullWidth: boolean }>`
-//   :focus {
-//     color: ${lightGreen};
-//     background: ${({ disabled }) => (disabled ? undefined : `${darkGreen} !important`)};
-//     border: 1px solid ${lightGreen};
-//   }
-//   :hover {
-//     color: ${black};
-//     background: ${({ disabled }) => (disabled ? undefined : `${lightGreen} !important`)};
-//   }
-//   :active {
-//     color: ${black};
-//     background: ${({ disabled }) => (disabled ? undefined : `${lightGreen} !important`)};
-//   }
-
-//   ${(props) => (props.fullWidth ? "width: 100%;" : null)}
-//   background: ${({ disabled }) => (disabled ? "#3D3D3D !important" : `${darkGreen}`)};
-//   color: ${({ disabled }) => (disabled ? `${lightGrey2} !important` : lightGreen)};
-//   border: none;
-//   border-radius: 2px;
-//   font-weight: 800;
-//   text-align: center;
-// `;
-
 export interface ButtonProps extends React.ComponentProps<'button'> {
-  disabled?: boolean;
+  // disabled?: boolean;
   className?: string;
   onClick?: React.MouseEventHandler<HTMLElement>;
   style?: React.CSSProperties;
-  fullWidth?: boolean;
+  // fullWidth?: boolean;
   children?: React.ReactNode;
   buttonType?: "primary" | "secondary";
   size?: "md" | "lg";
@@ -44,11 +13,11 @@ export interface ButtonProps extends React.ComponentProps<'button'> {
 }
 
 export const Button: React.FC<ButtonProps> = ({
-  disabled = false,
+  // disabled = false,
   children,
   onClick,
   className,
-  fullWidth,
+  // fullWidth,
   buttonType = "primary",
   size = "md",
   Icon,
