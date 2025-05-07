@@ -12,7 +12,7 @@ export const Navbar: React.FC = () => {
   const t = useTranslations("Navbar");
 
   return (
-    <nav className="fixed bg-white flex w-full h-[72px] px-4 sm:px-20 py-4 z-30">
+    <nav className="fixed bg-white flex w-full h-[72px] px-4 md:px-20 py-4 z-30">
         <Link className="w-[150px] h-[40px]" href="/">
         <Image
             className="min-w-[150px] h-full"
@@ -23,7 +23,7 @@ export const Navbar: React.FC = () => {
         />
         </Link>
         {/* Mobile Screen */}
-        <div className="w-full flex sm:hidden justify-end items-center mt-[-8px]">
+        <div className="w-full flex md:hidden justify-end items-center mt-[-8px]">
             <Hamburguer isHamburguerOpen={isMobileMenuOpen} setHamburguerOpen={setMobileMenuOpen} />
         </div>
         <div className={`w-full h-full ${isMobileMenuOpen ? "fixed" : "hidden"} top-[72px] -ml-4`}>
@@ -46,7 +46,7 @@ export const Navbar: React.FC = () => {
             
         </div>
         {/* Desktop screen */}
-        <div className="w-full hidden sm:flex items-center justify-between">
+        <div className="w-full hidden md:flex items-center justify-between">
             <ul className="flex ml-14 gap-8 items-center text-lg">
                 <li><Link className="font-medium hover:underline" href="/products">{t('Products')}</Link></li>
                 <li><Link className="font-medium hover:underline" href="/about-us">{t('Our Company')}</Link></li>

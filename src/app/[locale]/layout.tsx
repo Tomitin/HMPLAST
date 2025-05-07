@@ -42,7 +42,7 @@ export default async function LocaleLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider>
-        <header className="pb-[70px] sm:pb-[130px]">
+        <header className="pb-[70px] sm:pb-[100px]">
           <Navbar />
         </header>
         {children}
