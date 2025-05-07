@@ -40,9 +40,9 @@ export default function Home() {
     <div>
       <main>
         {/* HERO */}
-        <section className="h-[78vh] bg-white">  
-            <h1 className="font-medium text-2xl sm:text-[32px] md:text-[40px] text-center text-shadow-xs px-4 sm:px-0">{t('Precision manufacturing for all industries')}</h1>
-            <div className="bg-[url(/machine-2.png)] bg-no-repeat bg-position-[calc(50%)_calc(50%-100px)] md:bg-position-[calc(50%)_calc(50%-75px)] lg:bg-position-[calc(50%)_calc(50%-100px)] bg-size-[100vh] xl:bg-size-[900px] absolute size-full z-20 flex flex-col"></div>
+        <section className="bg-white" style={{height: "78dvh"}}>  
+            <h1 className="font-medium text-4xl sm:text-[32px] md:text-[40px] text-center text-shadow-xs px-4 sm:px-0">{t('Precision manufacturing for all industries')}</h1>
+            <div className="bg-[url(/machine-2.png)] bg-no-repeat bg-position-[calc(50%)_calc(50%-150px)] md:bg-position-[calc(50%)_calc(50%-75px)] lg:bg-position-[calc(50%)_calc(50%-100px)] bg-size-[100vh] xl:bg-size-[900px] absolute size-full z-20 flex flex-col"></div>
         </section>
         {/* Roulette */}
         <section className="sm:px-20 py-10 bg-[#efefef]">
