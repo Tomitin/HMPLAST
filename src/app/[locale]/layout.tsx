@@ -4,10 +4,6 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
-import Image from "next/image";
-import { Link } from "@/i18n/navigation";
-import { InstagramIcon } from "@/assets/icons/Instagram";
-import { LinkedInIcon } from "@/assets/icons/LinkedIn";
 import { Navbar } from "@/components/Navbar/Navbar";
 import { Footer } from "@/components/Footer/Footer";
 
