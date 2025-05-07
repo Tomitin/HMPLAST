@@ -3,14 +3,15 @@ import { DownArrowIcon } from '@/assets/icons/ArrowDown';
 import { UpArrowIcon } from '@/assets/icons/ArrowUp';
 import { useState, useRef, useEffect, ReactNode } from 'react';
 
-interface DropdownProps {
+export interface DropdownProps {
   label: ReactNode;
   options: { label: string; value: string }[];
   onSelect: (value: string) => void;
   selectedValue: string;
+  dropdownBoxSide?: "bottomRight" | "bottomLeft";
 }
 
-export default function Dropdown({ label, options, onSelect, selectedValue }: DropdownProps) {
+export default function Dropdown({ label, options, onSelect, selectedValue, dropdownBoxSide }: DropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -42,7 +43,7 @@ export default function Dropdown({ label, options, onSelect, selectedValue }: Dr
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg z-10">
+        <div className={`absolute ${dropdownBoxSide === "bottomRight" ? "left-20" : "right-0"} mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg z-10`}>
           {options.map((opt) => (
             <button
               key={opt.value}

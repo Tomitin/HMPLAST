@@ -41,7 +41,7 @@ export default function Home() {
       <main>
         {/* HERO */}
         <section className="bg-white" style={{height: "78dvh"}}>  
-            <h1 className="font-medium text-4xl sm:text-[32px] md:text-[40px] text-center text-shadow-xs px-4 sm:px-0">{t('Precision manufacturing for all industries')}</h1>
+            <h1 className="font-medium text-3xl sm:text-[32px] md:text-[40px] text-center text-shadow-xs px-4 sm:px-0">{t('Precision manufacturing for all industries')}</h1>
             <div className="bg-[url(/machine-2.png)] bg-no-repeat bg-position-[calc(50%)_calc(50%-150px)] md:bg-position-[calc(50%)_calc(50%-75px)] lg:bg-position-[calc(50%)_calc(50%-100px)] bg-size-[100vh] xl:bg-size-[900px] absolute size-full z-20 flex flex-col"></div>
         </section>
         {/* Roulette */}
@@ -181,7 +181,7 @@ export default function Home() {
 
             <div className="flex flex-wrap justify-between sm:px-10 py-5 mt-10 sm:mt-20">
                 <div className="pr-4 flex-1/2 flex justify-center mb-8 sm:mb-4 md:mb-0">
-                  <video className="object-cover max-h-[100%] min-w-[300px] sm:max-w-[450px] rounded-md" autoPlay controls muted loop src="/videomakina.mp4" />    
+                  <video className="object-cover max-h-[100%] min-w-[300px] sm:max-w-[450px] rounded-md" autoPlay muted loop src="/videomakina.mp4" />    
                 </div>
                 <div className="sm:pl-4 flex-1/2 flex flex-col justify-center items-center">
                   <div>

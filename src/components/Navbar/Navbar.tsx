@@ -40,7 +40,7 @@ export const Navbar: React.FC = () => {
                     </li>
                 </ul>
                 <div className="flex items-end">
-                    <LanguageSwitcher />
+                    <LanguageSwitcher dropdownBoxSide="bottomRight" />
                 </div>
             </div>
             
@@ -54,7 +54,7 @@ export const Navbar: React.FC = () => {
             </ul>
             <div className="flex items-center">
                 <div className="flex items-center gap-1">
-                <LanguageSwitcher />
+                <LanguageSwitcher dropdownBoxSide="bottomLeft" />
                 </div>
             </div>
         </div>

@@ -1,10 +1,10 @@
 "use client"
 import { usePathname, useRouter } from 'next/navigation';
-import Dropdown from '../Dropdown/Dropdown';
+import Dropdown, { DropdownProps } from '../Dropdown/Dropdown';
 import { locales } from '@/i18n/i18nConfig';
 import { useTranslations } from 'next-intl';
 
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher({dropdownBoxSide}: {dropdownBoxSide:DropdownProps["dropdownBoxSide"]}) {
   const pathname = usePathname();
   const router = useRouter();
   const currentLocale = pathname.split('/')[1];
@@ -27,6 +27,7 @@ export default function LanguageSwitcher() {
       options={options}
       onSelect={handleLocaleChange}
       selectedValue={currentLocale}
+      dropdownBoxSide={dropdownBoxSide}
     />
   );
 }
