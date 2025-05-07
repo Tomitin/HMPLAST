@@ -4,11 +4,12 @@ import Image from "next/image";
 import React, { useState } from "react";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import { Hamburguer } from "../Hamburger/Hamburguer";
+import { useTranslations } from "next-intl";
 
 export const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname();
-  console.log(pathname)
+  const t = useTranslations("Navbar");
 
   return (
     <nav className="fixed bg-white flex w-full h-[72px] px-4 sm:px-20 py-4 z-30">
@@ -29,13 +30,13 @@ export const Navbar: React.FC = () => {
             <div className="bg-white h-full w-full flex-col justify-between items-center text-xl">
                 <ul className="w-full border-b border-b-black">
                     <li onClick={() => setMobileMenuOpen(!isMobileMenuOpen)} className={`w-full py-2 pl-4 ${pathname === "/products" && "bg-[#e8e8e8]"}`}>
-                        <Link className="" href="/products">Products</Link>
+                        <Link className="" href="/products">{t('Products')}</Link>
                     </li>
                     <li onClick={() => setMobileMenuOpen(!isMobileMenuOpen)} className={`w-full py-2 pl-4 ${pathname === "/about-us" && "bg-[#e8e8e8]"}`}>
-                        <Link className="" href="/about-us">Our Company</Link>
+                        <Link className="" href="/about-us">{t('Our Company')}</Link>
                     </li>
                     <li onClick={() => setMobileMenuOpen(!isMobileMenuOpen)} className={`w-full py-2 pl-4 ${pathname === "/contact" && "bg-[#e8e8e8]"}`}>
-                        <Link className="" href="/contact">Contact</Link>
+                        <Link className="" href="/contact">{t('Contact')}</Link>
                     </li>
                 </ul>
                 <div className="flex items-end">
@@ -47,9 +48,9 @@ export const Navbar: React.FC = () => {
         {/* Desktop screen */}
         <div className="w-full hidden sm:flex items-center justify-between">
             <ul className="flex ml-14 gap-8 items-center text-lg">
-                <li><Link className="font-medium hover:underline" href="/products">Products</Link></li>
-                <li><Link className="font-medium hover:underline" href="/about-us">Our Company</Link></li>
-                <li><Link className="font-medium hover:underline" href="/contact">Contact</Link></li>
+                <li><Link className="font-medium hover:underline" href="/products">{t('Products')}</Link></li>
+                <li><Link className="font-medium hover:underline" href="/about-us">{t('Our Company')}</Link></li>
+                <li><Link className="font-medium hover:underline" href="/contact">{t('Contact')}</Link></li>
             </ul>
             <div className="flex items-center">
                 <div className="flex items-center gap-1">

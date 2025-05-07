@@ -5,12 +5,37 @@
         "tr": "Türkçe"
     },
     "Navbar": {
-        "products": "Products",
+        "Products": "Products",
         "Our Company": "Our Company",
         "Contact": "Contact"
     },
     "Footer": {
-        
+        "Innovation in every part": "Innovation in every part",
+        "Factories": "Factories",
+        "Contact": "Contact"
+    },
+    "Products": {
+        "title": "Products we've done"
+    },
+    "Contact": {
+        "Find us": "Find us",
+        "Contact us": "Contact us",
+        "Company Name": "Company Name",
+        "Email": "Email",
+        "Subject": "Subject",
+        "Message": "Message",
+        "Sending": "Sending...",
+        "Send Message": "Send Message",
+        "Message sent successfully": "Message sent successfully!",
+        "Message Subject": "Message Subject"
+    },
+    "AboutUs": {
+        "About": "About HMPLAST",
+        "Contact us": "Contact us",
+        "HM Plast has been operating for over 15 years": "HM Plast has been operating for over 15 years as a company specialized in the plastic and mold sector. It has a leading position in the medical and educational sectors, as well as manufacturing various products for sports equipment, plastic platforms, toys and the automotive sectors. It offers end-to-end services in the projecting, design, production and mold projecting processes of plastic products. It offers innovative design and production solutions to meet the needs of customers.",
+        "HM Plast is working resolutely to be recognized": "HM Plast is working resolutely to be recognized as a leading brand specialized in the plastic and mold sector and to become a preferred supplier worldwide. We strive to meet the needs of its customers and exceed their expectations by offering high quality plastic products, including contract manufacturing and R&D studies. It aims to be a pioneer in the sector with its understanding of innovation and perfectionism.",
+        "Mission": "Mission"
+
     },
     "HomePage": {
         "Precision manufacturing for all industries": "Precision manufacturing for all industries",
@@ -42,6 +67,8 @@
         "See more products": "See more products",
         "Contact us": "Contact us",
         "We'd love to hear from you! Reach out to us via WhatsApp or Email for any inquiries or support": "We'd love to hear from you! Reach out to us via WhatsApp or Email for any inquiries or support.",
-        "Send Message": "Send Message"
+        "Send Message": "Send Message",
+        "We make products for all type of industries accross the globe": "We make products for all type of industries accross the globe.",
+        "See products": "See products"
     }
 }

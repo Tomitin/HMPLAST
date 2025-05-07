@@ -1,47 +1,73 @@
 {
     "Languages": {
-        "en": "English",
-        "es": "Español",
-        "tr": "Türkçe"
+      "en": "English",
+      "es": "Español",
+      "tr": "Türkçe"
     },
     "Navbar": {
-        "products": "Products",
-        "Our Company": "Our Company",
-        "Contact": "Contact"
+      "Products": "Productos",
+      "Our Company": "Nuestra Empresa",
+      "Contact": "Contacto"
     },
     "Footer": {
-        
+      "Innovation in every part": "Innovación en cada parte",
+      "Factories": "Fábricas",
+      "Contact": "Contacto"
+    },
+    "Products": {
+      "title": "Productos que hemos realizado"
+    },
+    "Contact": {
+      "Find us": "Encuéntranos",
+      "Contact us": "Contáctanos",
+      "Company Name": "Nombre de la empresa",
+      "Email": "Email",
+      "Subject": "Asunto",
+      "Message": "Mensaje",
+      "Sending": "Enviando...",
+      "Send Message": "Enviar mensaje",
+      "Message sent successfully": "¡Mensaje enviado con éxito!",
+      "Message Subject": "Asunto del mensaje"
+    },
+    "AboutUs": {
+      "About": "Sobre HMPLAST",
+      "Contact us": "Contáctanos",
+      "HM Plast has been operating for over 15 years": "HM Plast ha estado operando por más de 15 años como una empresa especializada en el sector del plástico y los moldes. Tiene una posición de liderazgo en los sectores médico y educativo, además de fabricar diversos productos para equipos deportivos, plataformas plásticas, juguetes y la industria automotriz. Ofrece servicios integrales en los procesos de proyección, diseño, producción y proyección de moldes de productos plásticos. Brinda soluciones innovadoras de diseño y producción para satisfacer las necesidades de los clientes.",
+      "HM Plast is working resolutely to be recognized": "HM Plast trabaja con determinación para ser reconocida como una marca líder especializada en el sector del plástico y los moldes y convertirse en un proveedor preferido a nivel mundial. Nos esforzamos por satisfacer las necesidades de nuestros clientes y superar sus expectativas ofreciendo productos plásticos de alta calidad, incluyendo fabricación por contrato y estudios de I+D. Su objetivo es ser pionera en el sector con una visión de innovación y perfeccionismo.",
+      "Mission": "Misión"
     },
     "HomePage": {
-        "Precision manufacturing for all industries": "Precision manufacturing for all industries",
-        "Trusted by 100+ clients worldwide": "Trusted by 100+ clients worldwide.",
-        "Comprehensive plastic and mold solutions": "Comprehensive plastic and mold solutions.",
-        "We deliver customized manufacturing solutions for every industry using a broad range of materials": "We deliver customized manufacturing solutions for every industry using a broad range of materials.",
-        "Concept to Production": "Concept to Production",
-        "HM Plast provides comprehensive plastic and mold solutions —from concept to production— customized for each client": "HM Plast provides comprehensive plastic and mold solutions —from concept to production— customized for each client.",
-        "Industries we serve": "Industries we serve",
-        "We serve key industries including Medical, Educational, Sports Equipment, Plastic Platforms, Toys, the Automotive industry and more": "We serve key industries including Medical, Educational, Sports Equipment, Plastic Platforms, Toys, the Automotive industry and more.",
-        "Materials": "Materials",
-        "We work with molds made out different materials, such as wood, plastic or metal, suited at client's request": "We work with molds made out different materials, such as wood, plastic or metal, suited at client's request.",
-        "Experience in the field": "Experience in the field",
-        "HM Plast has been working with state-of-the-art technology in mold and plastic solutions for over 15 years": "HM Plast has been working with state-of-the-art technology in mold and plastic solutions for over 15 years.",
-        "Learn about what we stand for": "Learn about what we stand for",
-        "From concept to production": "From concept to production",
-        "We make your ideas a reality": "We make your ideas a reality.",
-        "Planning Phase": "Planning Phase",
-        "PlanningPhaseDescription": "Get in touch with us through WhatsApp or Email at info@hmplast.com.tr and start a conversation about what you desire to build, we'll take you step by step and give a quote for each item.",
-        "Send us a message": "Send us a message",
-        "Designing Phase": "Designing Phase",
-        "After coming to a deal on what needs to be manufactured, we'll proceed to build the prototype's design and get in more specifics of what you'll need": "After coming to a deal on what needs to be manufactured, we'll proceed to build the prototype's design and get in more specifics of what you'll need.",
-        "Read more about our values": "Read more about our values",
-        "Manufacturing Phase": "Manufacturing Phase",
-        "ManufacturingPhaseDescription": "After designs are done, the products requested will start to be manufactured and get ready to be shipped. We can also deliver the products to any country you need.",
-        "See products we've done": "See products we've done",
-        "Get in touch with us": "Get in touch with us",
-        "We deliver customized solutions in every industry using a broad range of materials": "We deliver customized solutions in every industry using a broad range of materials.",
-        "See more products": "See more products",
-        "Contact us": "Contact us",
-        "We'd love to hear from you! Reach out to us via WhatsApp or Email for any inquiries or support": "We'd love to hear from you! Reach out to us via WhatsApp or Email for any inquiries or support.",
-        "Send Message": "Send Message"
+      "Precision manufacturing for all industries": "Fabricación de precisión para todas las industrias",
+      "Trusted by 100+ clients worldwide": "Con la confianza de más de 100 clientes en todo el mundo.",
+      "Comprehensive plastic and mold solutions": "Soluciones integrales en plástico y moldes.",
+      "We deliver customized manufacturing solutions for every industry using a broad range of materials": "Ofrecemos soluciones de fabricación personalizadas para cada industria utilizando una amplia variedad de materiales.",
+      "Concept to Production": "Del concepto a la producción",
+      "HM Plast provides comprehensive plastic and mold solutions —from concept to production— customized for each client": "HM Plast ofrece soluciones integrales en plástico y moldes —desde el concepto hasta la producción— personalizadas para cada cliente.",
+      "Industries we serve": "Industrias que atendemos",
+      "We serve key industries including Medical, Educational, Sports Equipment, Plastic Platforms, Toys, the Automotive industry and more": "Atendemos industrias clave como la médica, educativa, equipos deportivos, plataformas plásticas, juguetes, la industria automotriz y más.",
+      "Materials": "Materiales",
+      "We work with molds made out different materials, such as wood, plastic or metal, suited at client's request": "Trabajamos con moldes fabricados en diferentes materiales, como madera, plástico o metal, según los requerimientos del cliente.",
+      "Experience in the field": "Experiencia en el campo",
+      "HM Plast has been working with state-of-the-art technology in mold and plastic solutions for over 15 years": "HM Plast ha trabajado con tecnología de punta en soluciones de plástico y moldes por más de 15 años.",
+      "Learn about what we stand for": "Conoce en qué creemos",
+      "From concept to production": "Del concepto a la producción",
+      "We make your ideas a reality": "Convertimos tus ideas en realidad.",
+      "Planning Phase": "Fase de planificación",
+      "PlanningPhaseDescription": "Ponte en contacto con nosotros por WhatsApp o por correo electrónico a info@hmplast.com.tr y comienza una conversación sobre lo que deseas construir. Te guiaremos paso a paso y te daremos un presupuesto para cada ítem.",
+      "Send us a message": "Envíanos un mensaje",
+      "Designing Phase": "Fase de diseño",
+      "After coming to a deal on what needs to be manufactured, we'll proceed to build the prototype's design and get in more specifics of what you'll need": "Después de llegar a un acuerdo sobre lo que se debe fabricar, procederemos a diseñar el prototipo y detallar los elementos específicos que necesitarás.",
+      "Read more about our values": "Lee más sobre nuestros valores",
+      "Manufacturing Phase": "Fase de fabricación",
+      "ManufacturingPhaseDescription": "Una vez finalizados los diseños, se comenzarán a fabricar los productos solicitados y se prepararán para su envío. También podemos entregar los productos en cualquier país que necesites.",
+      "See products we've done": "Ver productos que hemos realizado",
+      "Get in touch with us": "Ponte en contacto con nosotros",
+      "We deliver customized solutions in every industry using a broad range of materials": "Ofrecemos soluciones personalizadas en todas las industrias utilizando una amplia gama de materiales.",
+      "See more products": "Ver más productos",
+      "Contact us": "Contáctanos",
+      "We'd love to hear from you! Reach out to us via WhatsApp or Email for any inquiries or support": "¡Nos encantaría saber de ti! Contáctanos por WhatsApp o correo electrónico para cualquier consulta o asistencia.",
+      "Send Message": "Enviar mensaje",
+      "We make products for all type of industries accross the globe": "Fabricamos productos para todo tipo de industrias en todo el mundo.",
+      "See products": "Ver productos"
     }
-}
+  }

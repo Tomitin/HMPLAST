@@ -1,35 +1,48 @@
 'use client';
-import { HeartIcon } from "@/assets/icons/Heart";
 import { JohnsonIcon } from "@/assets/icons/Johnson";
 import { PfizerIcon } from "@/assets/icons/Pfizer";
 import { Button } from "@/components/Button/Button";
 import { ContactForm } from "@/components/ContactForm/ContactForm";
-import { Link} from "@/i18n/navigation";
-import { useTranslations } from "next-intl";
+import { Link, redirect} from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function Home() {
   const t = useTranslations("HomePage");
-
-  const phone = '905424081090'; // Brazil example number
+  const locale = useLocale()
+  const HMPLAST_NUMBER = '905424081090';
   const defaultWhatsappMessage = "Hello! I would like to know more about your services.";
   const encodedMessage = encodeURIComponent(defaultWhatsappMessage);
-  const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
+  const whatsappUrl = `https://wa.me/${HMPLAST_NUMBER}?text=${encodedMessage}`;
 
   const handleWhatsappClick = (event?: React.MouseEvent<HTMLAnchorElement | HTMLElement> | undefined) => {
     if(event) {
       event.preventDefault();
     }
     window.open(whatsappUrl, "_blank")
-    // redirect({ href: "/products", locale: locale });
+  }
+
+  const handleProductsClick = (event?: React.MouseEvent<HTMLAnchorElement | HTMLElement> | undefined) => {
+    if(event) {
+      event.preventDefault();
+    }
+    redirect({ href: "/products", locale: locale });
+  }
+
+  const handleAboutUsClick = (event?: React.MouseEvent<HTMLAnchorElement | HTMLElement> | undefined) => {
+    if(event) {
+      event.preventDefault();
+    }
+    redirect({ href: "/about-us", locale: locale });
   }
 
   return (
-    <div className="total">
-      <main className="">
+    <div>
+      <main>
         <section className="h-[78vh] bg-white">  
             <div className="bg-[url(/machine-2.png)] bg-no-repeat bg-position-[calc(50%)_calc(50%+50px)] sm:bg-position-[calc(50%)_calc(50%)] bg-size-[600px] sm:bg-size-[700px] md:bg-size-[1000px] absolute size-full z-20 flex flex-col">
-              <div className="mt-10 sm:mt-0">
-                <h1 className="text-[40px] sm:text-[56px] text-center text-shadow-xs px-4 sm:px-0">{t('Precision manufacturing for all industries')}</h1>
+              <div>
+                <h1 className="text-[40px] font-medium sm:text-[56px] text-center text-shadow-xs px-4 sm:px-0">{t('Precision manufacturing for all industries')}</h1>
               </div>
             </div>
         </section>
@@ -105,7 +118,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <Button className="mt-10" size="lg" onClick={handleWhatsappClick} buttonType="primary">
+                <Button className="mt-10" size="lg" onClick={handleAboutUsClick} buttonType="primary">
                   {t('Learn about what we stand for')}
                 </Button>
               </div>
@@ -117,7 +130,7 @@ export default function Home() {
             <h3 className="text-3xl sm:text-4xl text-black font-bold mb-2 text-center">{t('From concept to production')}</h3>
             <h5 className="text-md sm:text-xl text-[#6d6d6d]">{t('We make your ideas a reality')}</h5>
           </div>
-          <div className="mt-10 sm:mt-20">
+          <div className="max-w-[2500px] mx-auto mt-10 sm:mt-20">
             <div className="flex flex-wrap justify-between sm:px-10 py-5">
                 <div className="mb-8 sm:mb-0 flex-1/2 flex justify-center">
                   <img className="max-h-[100%] max-w-[300px] sm:max-w-[450px] rounded-md" src="./businessmen_agreeing.png"/>
@@ -165,7 +178,7 @@ export default function Home() {
 
             <div className="flex flex-wrap justify-between sm:px-10 py-5 mt-10 sm:mt-20">
                 <div className="flex-1/2 flex justify-center mb-8 sm:mb-0">
-                  <video className="object-cover w-[500px] rounded-md" autoPlay controls muted loop src="/videomakina.mp4" />    
+                  <video className="object-cover min-w-[300px] w-[500px] rounded-md" autoPlay controls muted loop src="/videomakina.mp4" />    
                 </div>
                 <div className="flex-1/2 flex flex-col justify-center items-center">
                   <div>
@@ -190,32 +203,26 @@ export default function Home() {
             </Button>
           </div>
         </section>
-        <section className="px-6 pt-5 mt-5 mb-20 bg-white">
-          <div className="mb-10 flex flex-col items-center">
-            <h3 className="text-4xl font-bold mb-3 text-center">{t('Industries we serve')}</h3>
-            <h5 className="text-xl text-[#6d6d6d] text-center">{t('We deliver customized solutions in every industry using a broad range of materials')}</h5>
-          </div>
-          <div className="flex justify-center gap-6">
-            <div className="bg-gray-100 py-4 px-6 rounded-xl">
-              <HeartIcon width={160} height={160} />
-              <h3 className="text-2xl text-green-600 font-bold text-center">Health →</h3>
+        <section className="mt-5 mb-2 w-full bg-black">
+          <div className="max-w-[2500px] mx-auto flex flex-wrap-reverse md:flex-nowrap">
+            <div className="flex-1/2 min-w-[300px] flex flex-col justify-center py-12 md:py-8 px-6 md:px-16">
+              <h3 className="text-2xl md:text-5xl text-white font-bold mb-3">{t('Industries we serve')}</h3>
+              <h5 className="text-lg md:text-xl text-white max-w-[500px] mb-5">{t('We make products for all type of industries accross the globe')}.</h5>
+              <div className="">
+                <Button size="lg" onClick={handleProductsClick} buttonType="primary">
+                  {t('See products')}
+                </Button>
+              </div>
             </div>
-          </div>
-
-
-
-
-{/* 
-          <div className="flex gap-16 overflow-hidden overflow-x-scroll p-3 mb-10">
-              <DetailedImage Icon={<HeartIcon width={45} height={45} />} className="object-fit max-w-[400px] min-w-[400px] max-h-[250px]" src="./hospital_bed_hd.png" />
-              <DetailedImage Icon={<BabyIcon width={45} height={45}/>} className="object-fit max-w-[400px] min-w-[400px] max-h-[250px]" src="./toy.png" />
-              <DetailedImage Icon={<BallIcon width={45} height={45}/>} className="object-fit max-w-[400px] min-w-[400px] max-h-[250px]" src="./ski-rack.png" />
-              <DetailedImage Icon={<SafetyIcon width={45} height={45}/>} className="object-fit max-w-[400px] min-w-[400px] max-h-[250px]" src="./gancho.png" />
-          </div> */}
-          <div className="mt-8 flex justify-center">
-            <Button size="lg" onClick={handleWhatsappClick} buttonType="primary">
-                {t('See more products')}
-            </Button>
+            <div className="flex-1/2">
+              <Image 
+                className="w-full h-full object-cover"
+                src={"/male-working.jpeg"}
+                width={1300}
+                height={900}
+                alt=""
+              />
+            </div>
           </div>
         </section>
 

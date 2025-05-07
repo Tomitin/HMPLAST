@@ -47,7 +47,7 @@ export default function Dropdown({ label, options, onSelect, selectedValue }: Dr
             <button
               key={opt.value}
               onClick={() => handleOptionClick(opt.value)}
-              className={`block w-full text-left px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 ${
+              className={`block w-full text-left p-4 text-md cursor-pointer hover:bg-gray-100 ${
                 selectedValue === opt.value ? 'font-semibold text-green-600 bg-gray-100 hover:bg-gray-200' : ''
               }`}
             >

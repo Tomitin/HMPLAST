@@ -4,13 +4,16 @@ import { InstagramIcon } from "@/assets/icons/Instagram";
 import { LinkedInIcon } from "@/assets/icons/LinkedIn";
 import { ContactForm } from "@/components/ContactForm/ContactForm";
 import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 export default function Contact() {
+  const t = useTranslations("Contact");
+
   return (
     <div className="flex flex-wrap-reverse justify-between">
       <div className="ml-8 my-8">
           <div className="p-4 bg-[#1111110D] rounded-2xl w-[350px]">
-            <h4 className="text-lg font-bold mb-7 px-2">Find us</h4>
+            <h4 className="text-lg font-bold mb-7 px-2">{t('Find us')}</h4>
               <div className="px-2">
                 <h5 className="text-[16px] font-bold">Turkey</h5>
                 <p className="text-[#666666] text-[16px]">Corum, Turkey: CORUM INDUSTRIAL SITE 21ST STREET STREET NO:61</p>
@@ -28,7 +31,7 @@ export default function Contact() {
       </div>
       <div className="flex-2/3 mx-8 flex flex-col items-center">
         <div className="max-w-4xl w-full">
-          <h2 className="text-xl font-bold">Contact Us</h2>
+          <h2 className="text-xl font-bold">{t('Contact us')}</h2>
         </div>
         <ContactForm />
       </div>

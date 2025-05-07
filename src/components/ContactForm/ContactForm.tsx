@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 
 
 export const ContactForm: React.FC = () => {
-    const t = useTranslations("HomePage");
+    const t = useTranslations("Contact");
     const [formData, setFormData] = useState({ name: '', email: '', message: '', subject: '', company: '' });
     const [isSending, setIsSending] = useState(false);
     const [success, setSuccess] = useState(false);
@@ -50,13 +50,13 @@ export const ContactForm: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label htmlFor="name" className="block mb-1 font-medium text-sm text-gray-700">
-                        Company Name*
+                        {t('Company Name')}*
                     </label>
                     <input
                     id="name"
                     type="text"
                     name="name"
-                    placeholder="Company Name"
+                    placeholder={t("Company Name")}
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -65,12 +65,13 @@ export const ContactForm: React.FC = () => {
                 </div>
                 <div>
                     <label htmlFor="email" className="block mb-1 font-medium text-sm text-gray-700">
-                        Email*
+                        {t('Email')}*
                     </label>
                     <input
                     id="email"
                     type="email"
                     name="email"
+                    placeholder="example@gmail.com"
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -81,12 +82,12 @@ export const ContactForm: React.FC = () => {
 
             <div>
                 <label htmlFor="subject" className="block mb-1 font-medium text-sm text-gray-700">
-                    Subject*
+                    {t('Subject')}*
                 </label>
                 <input
                     type="text"
                     name="subject"
-                    placeholder="Message Subject"
+                    placeholder={t("Message Subject")}
                     value={formData.subject}
                     onChange={handleChange}
                     required
@@ -95,7 +96,7 @@ export const ContactForm: React.FC = () => {
             </div>
             <div>
                 <label htmlFor="message" className="block mb-1 font-medium text-sm text-gray-700">
-                    Message*
+                    {t('Message')}*
                 </label>
                 <textarea
                     id="message"
@@ -115,10 +116,9 @@ export const ContactForm: React.FC = () => {
                     size="lg"
                     className={`${isSending && 'bg-gray-400'}`}
                 >
-                            {isSending ? 'Sending...' : `${t('Send Message')}`}
-                    {/* {t('Send Message')} */}
+                    {isSending ? t('Sending') : `${t('Send Message')}`}
                 </Button>
-                {(success && !isSending) && <p className="text-green-600 text-sm">Message sent successfully!</p>}
+                {(success && !isSending) && <p className="text-green-600 text-sm">{t('Message sent successfully')}</p>}
             </div>
         </form>
     )
