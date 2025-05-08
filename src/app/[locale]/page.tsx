@@ -181,7 +181,7 @@ export default function Home() {
 
             <div className="flex flex-wrap justify-between sm:px-10 py-5 mt-10 sm:mt-20">
                 <div className="pr-4 flex-1/2 flex justify-center mb-8 sm:mb-4 md:mb-0">
-                  <video className="object-cover max-h-[100%] min-w-[300px] sm:max-w-[450px] rounded-md" autoPlay muted loop src="/videomakina.mp4" />    
+                  <video className="object-cover max-h-[100%] min-w-[300px] sm:max-w-[450px] rounded-md" playsInline autoPlay controls muted loop src="/videomakina.mp4" />    
                 </div>
                 <div className="sm:pl-4 flex-1/2 flex flex-col justify-center items-center">
                   <div>
