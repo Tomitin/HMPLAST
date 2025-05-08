@@ -36,15 +36,18 @@ export async function POST(req: NextRequest) {
   const { name, email, message, subject } = body;
 
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    port: 465,
+    host: "smtp.gmail.com",
     auth: {
       user: process.env.GMAIL_USER,       // your Gmail address
       pass: process.env.GMAIL_PASS,       // app-specific password
     },
+    secure: true,
   });
 
-  const mailOption = {
+  const mailData = {
     from: `${email}`,
+    replyTo: email,
     to: `${process.env.GMAIL_USER}`,
     subject: subject,
     text: `
@@ -53,20 +56,38 @@ export async function POST(req: NextRequest) {
     `,
   };
 
-
-  try {
-    await transporter.sendMail(mailOption, (err) => {
-      if (err) {
-        console.log(err);
-        return NextResponse.json({ error: 'Email could not be sent' }, { status: 500 });
-      } else {
-        return NextResponse.json({ success: true });
-      }
+  await new Promise((resolve, reject) => {
+    // verify connection configuration
+    transporter.verify(function (error, success) {
+        if (error) {
+            console.log(error);
+            reject(error);
+        } else {
+            console.log("Server is ready to take our messages");
+            resolve(success);
+        }
     });
+  });
 
-    return NextResponse.json({ success: true });
-  } catch (err) {
-    console.error(err);
-    return NextResponse.json({ error: 'Email could not be sent' }, { status: 500 });
-  }
+  await new Promise((resolve, reject) => {
+    // send mail
+    transporter.sendMail(mailData, (err, info) => {
+        if (err) {
+            console.error(err);
+            reject(err);
+        } else {
+            console.log(info);
+            resolve(info);
+        }
+    });
+  });
+
+  return NextResponse.json({ success: true });
+  // try {
+  //   await transporter.sendMail(mailOption);
+  //   return NextResponse.json({ success: true });
+  // } catch (err) {
+  //   console.error(err);
+  //   return NextResponse.json({ error: 'Email could not be sent' }, { status: 500 });
+  // }
 }
