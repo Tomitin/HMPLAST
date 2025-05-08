@@ -10,6 +10,10 @@ export async function POST(req: NextRequest) {
   const ip = req.headers.get('x-forwarded-for') || 'unknown';
   const now = Date.now();
 
+  if(!process.env.GMAIL_USER || !process.env.GMAIL_PASS) {
+    return NextResponse.json({ error: 'No vars found' }, { status: 500 })
+  }
+
   // Rate limit check
   const record = rateLimitMap.get(ip);
   if (record) {
